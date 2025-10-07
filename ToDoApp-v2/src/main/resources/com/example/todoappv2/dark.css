@@ -1,0 +1,83 @@
+/* Root and background */
+.root {
+    -fx-background-color: #2b2b2b;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+/* ListView cells - Pending tasks */
+#taskListView .list-cell {
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: #f0f0f0;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+    -fx-background-radius: 5px;
+}
+
+#taskListView .list-cell:selected {
+    -fx-background-color: #5a9bd5;
+    -fx-text-fill: white;
+}
+
+#taskListView .list-cell:hover {
+    -fx-background-color: #4a7ca8;
+}
+
+/* ListView cells - Completed tasks */
+#completedListView .list-cell {
+    -fx-background-color: #2a3b2b;
+    -fx-text-fill: #c0ffc0;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+    -fx-background-radius: 5px;
+}
+
+#completedListView .list-cell:selected {
+    -fx-background-color: #3fa23f;
+    -fx-text-fill: white;
+}
+
+#completedListView .list-cell:hover {
+    -fx-background-color: #57c257;
+}
+
+/* Header labels: clock and stats */
+.label {
+    -fx-text-fill: #f0f0f0;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
+/* Controls */
+.button, .combo-box, .text-field, .date-picker, .spinner {
+    -fx-background-color: #555555;
+    -fx-text-fill: #f0f0f0;
+    -fx-font-size: 14px;
+    -fx-background-radius: 5px;
+}
+
+/* Spinner text field color */
+.spinner .text-field {
+    -fx-text-fill: #f0f0f0;
+}
+
+/* Scrollbars */
+.scroll-bar .track {
+    -fx-background-color: #3c3f41;
+}
+.scroll-bar .thumb {
+    -fx-background-color: #5a9bd5;
+}
+.scroll-bar .increment-button, .scroll-bar .decrement-button {
+    -fx-background-color: #555555;
+}
+
+/* ListView background for empty area */
+#taskListView, #completedListView {
+    -fx-background-color: #3c3f41; /* dark gray for empty space */
+}
+
+/* Ensures empty cells also follow dark background */
+#taskListView .list-cell:empty,
+#completedListView .list-cell:empty {
+    -fx-background-color: #3c3f41;
+}

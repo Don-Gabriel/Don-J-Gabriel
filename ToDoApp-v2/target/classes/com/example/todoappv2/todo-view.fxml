@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.todoappv2.ToDoController"
+      spacing="10" alignment="CENTER" style="-fx-padding: 20;">
+
+    <!-- Header: Clock and Completion stats -->
+    <HBox spacing="20" alignment="CENTER">
+        <Label fx:id="clockLabel" text="Clock"/>
+        <Label fx:id="statsLabel" text="0 of 0 tasks completed"/>
+    </HBox>
+
+    <!-- Task Input -->
+    <HBox spacing="10">
+        <TextField fx:id="taskInput" promptText="Enter task..." HBox.hgrow="ALWAYS"/>
+        <ComboBox fx:id="priorityBox" prefWidth="100"/>
+        <DatePicker fx:id="datePicker"/>
+        <Spinner fx:id="hourSpinner" prefWidth="60"/>
+        <Spinner fx:id="minuteSpinner" prefWidth="60"/>
+        <ComboBox fx:id="reminderBox" prefWidth="80"/>
+        <Button text="Add" onAction="#addTask"/>
+    </HBox>
+
+    <!-- Search box -->
+    <TextField fx:id="searchBox" promptText="Search tasks..." onKeyReleased="#searchTasks"/>
+
+    <!-- Control buttons -->
+    <HBox spacing="10">
+        <Button text="Toggle Dark/Light" onAction="#toggleTheme"/>
+        <Button text="Delete Selected" onAction="#deleteTask"/>
+        <Button text="Mark Completed" onAction="#moveToCompleted"/>
+        <Button text="Mark Pending" onAction="#moveToPending"/>
+    </HBox>
+
+    <!-- Task Lists -->
+    <HBox spacing="20">
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Pending Tasks"/>
+            <ListView fx:id="taskListView" prefHeight="400"/>
+        </VBox>
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Completed Tasks"/>
+            <ListView fx:id="completedListView" prefHeight="400"/>
+        </VBox>
+    </HBox>
+</VBox>
